@@ -9,3 +9,12 @@
 	 <% end %> 	
   </div>
 </div>
+
+<h6>Answers</h6>
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <% @question.answers.each do |ans|%>
+    	<li class="list-group-item"><%= ans.answer_of_question %></li>
+    <% end %>
+  </ul>
+</div>
