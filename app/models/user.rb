@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :questions, class_name: "Question"
   has_many :answers, class_name: "Answer"	
-
+  has_many :following, class_name: "UserFollower", foreign_key: :following_user_id
   def full_user_name
   	"#{self.first_name} #{self.last_name}"
   end	

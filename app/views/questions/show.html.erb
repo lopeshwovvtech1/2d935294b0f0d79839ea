@@ -1,6 +1,11 @@
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title"><%= @question.question_title %></h5>
-  	<a href="#" class="btn btn-primary"> Follow User</a>
+    <% if !@user_following.present? %>
+  		<a href="<%= user_following_users_path(question_id: @question) %>" class="btn btn-primary follow_user"> Follow User</a>
+  	<% end %>
+  	<% if !@user_topic_following.present? %>	
+	  	<a href="<%= topic_following_users_path(question_id: @question) %>" class="btn btn-primary follow_topic"> Follow Topic</a>
+	 <% end %> 	
   </div>
 </div>
